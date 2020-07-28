@@ -1,3 +1,16 @@
+# Fireflix
+
+Curso disponibilizado pelo Alura, realizado com ReactJS, `styled-components`.
+
+### Minhas Anotações
+
+Live Share -> Plugin VSCode
+IntelliCode -> Plugin VSCode p/ auxiliar no autocomplete
+Cypress -> Utilizado na maioria dos projeto React
+VSCode Styled Coponents -> melhora a sintaxe do CSS in JS
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
