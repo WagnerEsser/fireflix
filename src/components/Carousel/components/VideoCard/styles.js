@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const VideoCardContainer = styled.a`
   border: 2px solid;
@@ -28,4 +28,4 @@ export const VideoCardContainer = styled.a`
   &:not(:first-child) {
     margin-left: 20px;
   }
-`;
+`

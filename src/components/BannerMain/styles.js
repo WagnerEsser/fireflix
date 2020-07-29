@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const ContentAreaContainer = styled.section`
   margin-left: 5%;
@@ -13,7 +13,7 @@ export const ContentAreaContainer = styled.section`
     padding-top: 100px;
     flex-direction: column;
   }
-`;
+`
 
 ContentAreaContainer.Item = styled.div`
   width: 50%;
@@ -22,7 +22,7 @@ ContentAreaContainer.Item = styled.div`
   @media (max-width: 800px) {
     width: 100%;
   }
-`;
+`
 
 ContentAreaContainer.Category = styled.h1`
   font-family: Roboto;
@@ -43,13 +43,13 @@ ContentAreaContainer.Category = styled.h1`
     font-size: 18px;
     padding: 10px;
   }
-`;
+`
 
 ContentAreaContainer.Description = styled.p`
   @media (max-width: 800px) {
     display: none;
   }
-`;
+`
 
 ContentAreaContainer.Title = styled.h2`
   font-style: normal;
@@ -63,7 +63,7 @@ ContentAreaContainer.Title = styled.h2`
     font-size: 32px;
     text-align: center;
   }
-`;
+`
 
 export const BannerMainContainer = styled.section`
   height: 80vh;
@@ -98,7 +98,7 @@ export const BannerMainContainer = styled.section`
     bottom: 0;
     background: linear-gradient(0deg, #141414 0%, transparent 100%);
   }
-`;
+`
 
 export const WatchButton = styled.button`
   font-family: 'Roboto', sans-serif;
@@ -122,4 +122,4 @@ export const WatchButton = styled.button`
   @media (max-width: 800px) {
     display: block;
   }
-`;
+`

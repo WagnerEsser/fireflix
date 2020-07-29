@@ -1,15 +1,15 @@
-import React from 'react';
-import { VideoCardGroupContainer, VideoCardList, Title, ExtraLink } from './styles';
-import VideoCard from './components/VideoCard';
+import React from 'react'
+import { VideoCardGroupContainer, VideoCardList, Title, ExtraLink } from './styles'
+import VideoCard from './components/VideoCard'
 
-function VideoCardGroup({
+function VideoCardGroup ({
   ignoreFirstVideo,
-  category,
+  category
 }) {
-  const categoryTitle = category.titulo;
-  const categoryColor = category.cor;
-  const categoryExtraLink = category.link_extra;
-  const videos = category.videos;
+  const categoryTitle = category.titulo
+  const categoryColor = category.cor
+  const categoryExtraLink = category.link_extra
+  const videos = category.videos
   return (
     <VideoCardGroupContainer>
       {categoryTitle && (
@@ -17,9 +17,9 @@ function VideoCardGroup({
           <Title style={{ backgroundColor: categoryColor || 'red' }}>
             {categoryTitle}
           </Title>
-          {categoryExtraLink && 
+          {categoryExtraLink &&
             <ExtraLink href={categoryExtraLink.url} target="_blank">
-              {categoryExtraLink.text}  
+              {categoryExtraLink.text}
             </ExtraLink>
           }
         </>
@@ -27,7 +27,7 @@ function VideoCardGroup({
       <VideoCardList>
         {videos.map((video, index) => {
           if (ignoreFirstVideo && index === 0) {
-            return null;
+            return null
           }
 
           return (
@@ -38,11 +38,11 @@ function VideoCardGroup({
                 categoryColor={categoryColor}
               />
             </li>
-          );
+          )
         })}
       </VideoCardList>
     </VideoCardGroupContainer>
-  );
+  )
 }
 
-export default VideoCardGroup;
+export default VideoCardGroup

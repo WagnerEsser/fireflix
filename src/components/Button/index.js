@@ -1,14 +1,24 @@
 import styled from 'styled-components'
 
-export const Button = styled.button`
-    cursor: pointer;
-    text-align: center;
-    display: inline-block;
-    border-radius: 3px;
-    padding: 0.5rem 0;
-    margin: 0.5rem 1rem 0.5rem auto;
-    width: 7rem;
-    background: transparent;
-    color: white;
-    border: 2px solid white;
+const Button = styled.button`
+  color: var(--white);
+  border: 1px solid var(--white);
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 16px 24px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  outline: none;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity .3s;
+
+  &:hover,
+  &:focus {
+    opacity: .5;
+  }
 `
+
+export default Button

@@ -1,7 +1,7 @@
-import React from 'react';
-import { FooterBase } from './styles';
+import React from 'react'
+import { FooterBase } from './styles'
 
-function Footer() {
+function Footer () {
   return (
     <FooterBase>
       <a href="https://www.alura.com.br/">
@@ -14,8 +14,9 @@ function Footer() {
           Imersão React da Alura
         </a>
       </p>
+      <p>Implementado por Wagner Esser</p>
     </FooterBase>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

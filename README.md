@@ -8,6 +8,7 @@ Live Share -> Plugin VSCode
 IntelliCode -> Plugin VSCode p/ auxiliar no autocomplete
 Cypress -> Utilizado na maioria dos projeto React
 VSCode Styled Coponents -> melhora a sintaxe do CSS in JS
+editorconfig for VSCode -> Plugin VSCode (gerar .editorconfig)
 
 ---
 
