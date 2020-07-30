@@ -2,6 +2,13 @@
   "name": "fireflix",
   "version": "0.1.0",
   "private": true,
+  "author": "Wagner Esser",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -12,12 +19,7 @@
     "styled-components": "^5.1.1",
     "typescript": "^3.9.7"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+  "devDependencies": {},
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -32,6 +34,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {}
+  }
 }
