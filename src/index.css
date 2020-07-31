@@ -4,7 +4,7 @@
 }
 
 :root {
-  --primary: blue;
+  --primary: #560000;
   --black: black;
   --blickLigher: gray;
   --graylight: lightgray;
@@ -12,6 +12,7 @@
   --white: white;
   --frontend: #6bd1ff;
   --backend: #00c86f;
+  --grayDark: #141414;
 }
 
 html, body {

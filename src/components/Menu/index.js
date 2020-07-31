@@ -2,17 +2,18 @@ import React from 'react'
 import Logo from '../../assets/images/Logo.png'
 import Button from '../Button'
 import './Menu.css'
+import { MenuWrapper, LogoImage } from './style'
 
 function Menu () {
     return (
-        <nav className="Menu">
+        <MenuWrapper className="Menu">
             <a href="/">
-                <img className="Logo" alt="Fireflix" src={Logo} />
+                <LogoImage className="Logo" alt="Fireflix" src={Logo} />
             </a>
             <Button as="a" className="ButtonLink" href="#">
-        Novo vídeo
+                Novo vídeo
             </Button>
-        </nav>
+        </MenuWrapper>
     )
 }
 
