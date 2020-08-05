@@ -4,12 +4,17 @@ Curso disponibilizado pelo Alura, realizado com ReactJS, `styled-components`.
 
 ### Minhas Anotações
 
-Live Share -> Plugin VSCode
-IntelliCode -> Plugin VSCode p/ auxiliar no autocomplete
-Cypress -> Utilizado na maioria dos projeto React
-VSCode Styled Components -> melhora a sintaxe do CSS no JS
-editorconfig for VSCode -> Plugin VSCode (gerar .editorconfig)
-
+* Live Share -> Plugin p/ código compartilhado
+* IntelliCode -> Plugin p/ auxiliar no autocomplete
+* Cypress -> Lib utilizada na maioria dos projeto React
+* VSCode Styled Components -> Plugin p/ melhorar a sintaxe do CSS no JS
+* editorconfig for VSCode -> Plugin p/ gerar .editorconfig
+* json-server -> Lib p/ gerar um banco de dados básico em JSON
+    - Criar um arquivo db.json na raiz
+    - Rodar com `json-server --watch db.json`
+    - Add como script: `"server": "json-server --watch db.json --port 8080"`
+* concurrently -> Lib que permite rodar dois comandos que travam o terminal, em paralelo
+    - Rodar com `concurrently "react-scripts start" "npm run server"`
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
