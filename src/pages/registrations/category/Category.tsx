@@ -23,7 +23,9 @@ const Category = () => {
     const { handleChange, values, clearForm } = useForm(emptyState)
 
     useEffect(() => {
-        const URL = 'http://localhost:8080/categories'
+        const URL = window.location.hostname.includes('localhost')
+            ? 'http://localhost:8080/categories'
+            : 'https://fireflix.herokuapp.com/categories'
         fetch(URL)
             .then(async response => {
                 const categories = await response.json()
