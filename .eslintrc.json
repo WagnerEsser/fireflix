@@ -4,8 +4,8 @@
         "es2021": true
     },
     "extends": [
-        "eslint:recommended",
         "prettier",
+        "eslint:recommended",
         "plugin:prettier/recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended"
@@ -16,12 +16,14 @@
             "jsx": true
         },
         "ecmaVersion": 12,
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
     "plugins": [
         "react",
-        "@typescript-eslint",
-        "prettier"
+        "prettier",
+        "react-hooks",
+        "@typescript-eslint"
     ],
     "rules": {
         "quotes": [
@@ -32,6 +34,18 @@
             "error",
             "never"
         ],
+        "prettier/prettier": "error",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/jsx-wrap-multilines": ["error", {
+          "assignment": "parens-new-line",
+          "arrow": "ignore",
+          "condition": "parens-new-line",
+          "logical": "parens-new-line",
+          "prop": "ignore"
+        }],
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/ban-ts-ignore": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off"
     }
 }
