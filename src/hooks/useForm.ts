@@ -18,7 +18,7 @@ const useForm = (initialValues: any) => {
         setValues(initialValues)
     }
 
-    return { values, handleChange, clearForm, }
+    return { values, handleChange, clearForm }
 }
 
 export default useForm

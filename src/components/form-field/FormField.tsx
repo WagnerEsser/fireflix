@@ -2,12 +2,12 @@ import React from 'react'
 import { FormFieldWrapper, Label, Input, Text } from './styles'
 
 interface IProps {
-    label: string,
-    name: string,
-    value: string,
-    type?: string,
-    suggestions?: string[],
-    onChange(values: unknown): void,
+    label: string
+    name: string
+    value: string
+    type?: string
+    suggestions?: string[]
+    onChange(values: unknown): void
 }
 
 const FormField = (props: IProps) => {
@@ -27,23 +27,22 @@ const FormField = (props: IProps) => {
                     hasValue={hasValue}
                     onChange={onChange}
                     autoComplete={hasSuggestions ? 'off' : 'on'}
-                    list={hasSuggestions ? `suggestionFor_${fieldId}` : undefined}
+                    list={
+                        hasSuggestions ? `suggestionFor_${fieldId}` : undefined
+                    }
                 />
                 <Text>{label}:</Text>
-                {
-                    hasSuggestions && (
-                        <datalist id={`suggestionFor_${fieldId}`}>
-                            {
-                                suggestions.map((suggestion) => (
-                                    <option value={suggestion} key={`suggestionFor_${fieldId}_option${suggestion}`}>
-                                        {suggestion}
-                                    </option>
-                                ))
-                            }
-                        </datalist>
-                    )
-                }
-
+                {hasSuggestions && (
+                    <datalist id={`suggestionFor_${fieldId}`}>
+                        {suggestions.map(suggestion => (
+                            <option
+                                value={suggestion}
+                                key={`suggestionFor_${fieldId}_option${suggestion}`}>
+                                {suggestion}
+                            </option>
+                        ))}
+                    </datalist>
+                )}
             </Label>
         </FormFieldWrapper>
     )

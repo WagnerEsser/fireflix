@@ -10,16 +10,15 @@ import {
 } from './styles'
 
 const getYouTubeId = (youtubeURL: string) => {
-    return youtubeURL
-        .replace(
-            /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/,
-            '$7'
-        )
+    return youtubeURL.replace(
+        /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/,
+        '$7'
+    )
 }
 
 interface IProps {
-    title: string,
-    url: string,
+    title: string
+    url: string
     description?: string
 }
 
@@ -32,18 +31,12 @@ const BannerMain = (props: IProps) => {
         <BannerMainContainer backgroundImage={bgUrl}>
             <ContentAreaContainer>
                 <Item>
-                    <Title>
-                        {title}
-                    </Title>
-                    <Description>
-                        {description}
-                    </Description>
+                    <Title>{title}</Title>
+                    <Description>{description}</Description>
                 </Item>
                 <Item>
                     <VideoIframeResponsive youtubeId={youTubeId} />
-                    <WatchButton>
-                        Assistir
-                    </WatchButton>
+                    <WatchButton>Assistir</WatchButton>
                 </Item>
             </ContentAreaContainer>
         </BannerMainContainer>

@@ -24,11 +24,9 @@ const Video = () => {
     })
 
     useEffect(() => {
-        CategoryRepository
-            .getCategories()
-            .then(categoriesFromServer => {
-                setCategories(categoriesFromServer)
-            })
+        CategoryRepository.getCategories().then(categoriesFromServer => {
+            setCategories(categoriesFromServer)
+        })
     }, [])
 
     const handleSubmit = () => (event: React.FormEvent<HTMLFormElement>) => {
@@ -61,34 +59,32 @@ const Video = () => {
 
                 <form onSubmit={handleSubmit}>
                     <FormField
-                        label="Título do vídeo"
-                        name="title"
+                        label='Título do vídeo'
+                        name='title'
                         value={values.title}
                         onChange={handleChange}
                     />
                     <FormField
-                        label="URL"
-                        name="url"
+                        label='URL'
+                        name='url'
                         value={values.url}
                         onChange={handleChange}
                     />
                     <FormField
-                        label="Categoria"
-                        name="categoryId"
+                        label='Categoria'
+                        name='categoryId'
                         value={values.categoryId}
                         onChange={handleChange}
                     />
                     <FormField
-                        label="Categoria"
-                        name="category"
+                        label='Categoria'
+                        name='category'
                         value={values.category}
                         onChange={handleChange}
                         suggestions={categoryTitles}
                     />
 
-                    <Button type="submit">
-                        Cadastrar
-                    </Button>
+                    <Button type='submit'>Cadastrar</Button>
                 </form>
 
                 <br />

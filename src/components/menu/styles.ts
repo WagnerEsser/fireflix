@@ -1,10 +1,11 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 import Button from '../Button'
 
 export const LogoImage = styled.img`
     max-width: 168px;
 
-    @media (max-width: 800px) { /* até 800px */
+    @media (max-width: 800px) {
+        /* até 800px */
         max-width: 105px;
     }
 `
@@ -40,9 +41,10 @@ export const ButtonLink = styled(Button)`
     font-weight: bold;
     padding: 16px 24px; /* top / bottom | left / right */
     text-decoration: none;
-    transition: opacity .1s;
+    transition: opacity 0.1s;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         opacity: 0.5;
     }
 

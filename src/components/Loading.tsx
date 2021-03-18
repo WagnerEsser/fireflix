@@ -11,9 +11,15 @@ interface IProps {
     width?: number
 }
 
-const Loading = (props: IProps) =>
+const Loading = (props: IProps) => (
     <LoadingBase>
-        <img width={props.width} className="Loading" alt="Loading..." src={LoadingGif} />
+        <img
+            width={props.width}
+            className='Loading'
+            alt='Loading...'
+            src={LoadingGif}
+        />
     </LoadingBase>
+)
 
 export default Loading

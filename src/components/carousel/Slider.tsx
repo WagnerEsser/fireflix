@@ -4,15 +4,15 @@ import { Container } from './styles'
 
 const Slider = ({ children }: any) => (
     <Container>
-        <SlickSlider {...{
-            dots: false,
-            infinite: false,
-            speed: 300,
-            centerMode: false,
-            variableWidth: true,
-            adaptiveHeight: true,
-        }}
-        >
+        <SlickSlider
+            {...{
+                dots: false,
+                infinite: false,
+                speed: 300,
+                centerMode: false,
+                variableWidth: true,
+                adaptiveHeight: true
+            }}>
             {children}
         </SlickSlider>
     </Container>

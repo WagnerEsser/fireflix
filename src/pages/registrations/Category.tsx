@@ -35,11 +35,10 @@ const Category = () => {
             description: values.description,
             color: values.color
         }
-        CategoryRepository.create(categoryInput)
-            .then(() => {
-                setCategories([...categories, values])
-                clearForm()
-            })
+        CategoryRepository.create(categoryInput).then(() => {
+            setCategories([...categories, values])
+            clearForm()
+        })
     }
 
     return (
@@ -71,28 +70,20 @@ const Category = () => {
                         value={values.color}
                         onChange={handleChange}
                     />
-                    <Button onClick={handleSubmit}>
-                        Cadastrar
-                    </Button>
+                    <Button onClick={handleSubmit}>Cadastrar</Button>
                 </form>
 
-                {categories.length === 0 && (
-                    <p>Loading...</p>
-                )}
+                {categories.length === 0 && <p>Loading...</p>}
 
                 <ul>
-                    {categories.map(category =>
-                        <li key={category.name}>
-                            {category.name}
-                        </li>
-                    )}
+                    {categories.map(category => (
+                        <li key={category.name}>{category.name}</li>
+                    ))}
                 </ul>
 
-                <Link to='/'>
-                    Página inicial
-                </Link>
+                <Link to='/'>Página inicial</Link>
             </CategoryWrapper>
-        </PageDefault >
+        </PageDefault>
     )
 }
 

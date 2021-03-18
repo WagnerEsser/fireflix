@@ -5,7 +5,7 @@ import { Title, ExtraLink, SliderWrapper, SliderItem } from './styles'
 import { TCategory } from 'src/interfaces'
 
 interface IProps {
-    category: TCategory,
+    category: TCategory
     ignoreFirstVideo: boolean
 }
 
@@ -24,28 +24,29 @@ const Carousel = (props: IProps) => {
                         {categoryTitle}
                     </Title>
                     {categoryExtraLink && (
-                        <ExtraLink href={categoryExtraLink.url} target="_blank">
+                        <ExtraLink href={categoryExtraLink.url} target='_blank'>
                             {categoryExtraLink.description}
                         </ExtraLink>
                     )}
                 </>
             )}
             <Slider>
-                {movies && movies.map((movie, index) => {
-                    if (ignoreFirstVideo && index === 0) {
-                        return null
-                    }
+                {movies &&
+                    movies.map((movie, index) => {
+                        if (ignoreFirstVideo && index === 0) {
+                            return null
+                        }
 
-                    return (
-                        <SliderItem key={movie.title}>
-                            <VideoCard
-                                videoTitle={movie.title}
-                                videoURL={movie.url}
-                                categoryColor={categoryColor}
-                            />
-                        </SliderItem>
-                    )
-                })}
+                        return (
+                            <SliderItem key={movie.title}>
+                                <VideoCard
+                                    videoTitle={movie.title}
+                                    videoURL={movie.url}
+                                    categoryColor={categoryColor}
+                                />
+                            </SliderItem>
+                        )
+                    })}
             </Slider>
         </SliderWrapper>
     )

@@ -10,13 +10,12 @@ export const Main = styled.div`
     padding: 50px 5% auto 5%5%;
 `
 
-const PageDefault = ({ children }: any) =>
+const PageDefault = ({ children }: any) => (
     <>
         <Menu />
-        <Main>
-            {children}
-        </Main>
+        <Main>{children}</Main>
         <Footer />
     </>
+)
 
 export default PageDefault

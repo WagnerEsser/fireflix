@@ -6,22 +6,22 @@ import PageDefault from '../components/PageDefault'
 import { TCategory, TMovie } from '../interfaces'
 import Loading from '../components/Loading'
 
-
 const renderMovies = (movies: TMovie[]) =>
-    movies.map(movie =>
+    movies.map(movie => (
         <BannerMain
             key={movie.title}
             title={movie.title}
             url={movie.url}
             description={movie.description}
         />
-    )
+    ))
 
-const renderCategory = (category: TCategory) =>
+const renderCategory = (category: TCategory) => (
     <div key={category.id}>
         {renderMovies(category.movies)}
         {<Carousel ignoreFirstVideo category={category} />}
     </div>
+)
 
 const Home = () => {
     const [values, setValues] = useState<TCategory[]>([])
@@ -36,8 +36,8 @@ const Home = () => {
 
     return (
         <PageDefault>
-            { values.length === 0 && <Loading width={300} />}
-            { values.map(renderCategory)}
+            {values.length === 0 && <Loading width={300} />}
+            {values.map(renderCategory)}
         </PageDefault>
     )
 }

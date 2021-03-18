@@ -22,13 +22,11 @@ export const getAllItems = async (): Promise<TCategory[]> => {
 }
 
 export const create = async (categoryInput: ICategoryInput) => {
-    const response = await fetch(
-        config.URL_BACKEND + '/categories',
-        {
-            method: 'POST',
-            headers: { 'Content-type': 'applications/json' },
-            body: JSON.stringify(categoryInput)
-        })
+    const response = await fetch(config.URL_BACKEND + '/categories', {
+        method: 'POST',
+        headers: { 'Content-type': 'applications/json' },
+        body: JSON.stringify(categoryInput)
+    })
 
     return await response.json()
 }

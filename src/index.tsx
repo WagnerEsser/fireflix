@@ -10,10 +10,10 @@ import PageNotFound from './pages/PageNotFound'
 ReactDOM.render(
     <BrowserRouter>
         <Switch>
-            <Route path="/" component={ Home } exact />
-            <Route path="/registrations/create/video" component={ Video } />
-            <Route path="/registrations/create/category" component={ Category } />
-            <Route component={ PageNotFound } />
+            <Route path='/' component={Home} exact />
+            <Route path='/registrations/create/video' component={Video} />
+            <Route path='/registrations/create/category' component={Category} />
+            <Route component={PageNotFound} />
         </Switch>
     </BrowserRouter>,
     document.getElementById('root')
