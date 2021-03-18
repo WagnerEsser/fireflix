@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './index.css'
 import Home from './pages/Home'
-import Video from './pages/registrations/video'
-import Category from './pages/registrations/category/Category'
-import PageNotFound from './pages/404'
+import Video from './pages/registrations/Movie'
+import Category from './pages/registrations/Category'
+import PageNotFound from './pages/PageNotFound'
 
 ReactDOM.render(
     <BrowserRouter>
