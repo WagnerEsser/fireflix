@@ -1,4 +1,4 @@
-import config from '../Config'
+import config from '../config'
 import { IMovieInput } from '../interfaces'
 
 const URL_MOVIES = `${config.URL_BACKEND}/movies`

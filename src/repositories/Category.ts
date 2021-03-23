@@ -1,4 +1,4 @@
-import config from '../Config'
+import config from '../config'
 import { ICategoryInput, TCategory } from '../interfaces'
 
 const URL_CATEGORIES = `${config.URL_BACKEND}/categories`
