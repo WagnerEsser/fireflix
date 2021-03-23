@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const FormFieldWrapper = styled.div`
     position: relative;
+    max-width: 500px;
     textarea {
         min-height: 150px;
     }
@@ -32,6 +33,7 @@ export const Text = styled.span`
 
 interface IInputProps {
     hasValue: boolean
+    error?: boolean | undefined
 }
 
 export const Input = styled.input<IInputProps>`
@@ -43,9 +45,7 @@ export const Input = styled.input<IInputProps>`
     font-size: 18px;
 
     outline: 0;
-    border: 0;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid #53585d;
+    border: ${({ error }) => (error ? '1px solid red' : 0)};
 
     padding: 16px 16px;
     margin-bottom: 45px;

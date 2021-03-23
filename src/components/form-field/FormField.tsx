@@ -4,16 +4,17 @@ import { FormFieldWrapper, Label, Input, Text } from './styles'
 interface IProps {
     label: string
     name: string
-    value: string
+    value?: string
     type?: string
     suggestions?: string[]
+    error?: boolean
     onChange(values: unknown): void
 }
 
 const FormField = (props: IProps) => {
     const { label, type, name, value, onChange, suggestions = [] } = props
     const fieldId = `id_${name}`
-    const hasValue = Boolean(value.length)
+    const hasValue = !!value
     const hasSuggestions = Boolean(suggestions.length)
 
     return (
@@ -25,13 +26,14 @@ const FormField = (props: IProps) => {
                     value={value}
                     name={name}
                     hasValue={hasValue}
-                    onChange={onChange}
                     autoComplete={hasSuggestions ? 'off' : 'on'}
                     list={
                         hasSuggestions ? `suggestionFor_${fieldId}` : undefined
                     }
+                    error={props.error}
+                    onChange={onChange}
                 />
-                <Text>{label}:</Text>
+                <Text>{label}</Text>
                 {hasSuggestions && (
                     <datalist id={`suggestionFor_${fieldId}`}>
                         {suggestions.map(suggestion => (
