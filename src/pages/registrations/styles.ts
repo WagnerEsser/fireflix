@@ -1,17 +1,5 @@
 import styled from 'styled-components'
 
-export const Flex = styled.div`
-    display: flex;
-`
-
-export const PageWrapper = styled.div`
-    padding: 50px;
-`
-
-export const PageDivisor = styled.div`
-    flex: 1;
-`
-
 export const CategoryList = styled.ul`
     list-style: none;
     padding-left: 0%;

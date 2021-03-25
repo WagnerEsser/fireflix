@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react'
-import { Link } from 'react-router-dom'
 import PageDefault from '../../components/PageDefault'
 import FormField from '../../components/form-field/FormField'
 import Button from '../../components/Button'
@@ -7,14 +6,8 @@ import useForm from '../../hooks/useForm'
 import CategoryRepository from '../../repositories/Category'
 import { ICategoryInput, TCategory } from '../../interfaces'
 import Loading from 'src/components/Loading'
-import {
-    CategoryList,
-    PageWrapper,
-    Circle,
-    Form,
-    PageDivisor,
-    Flex
-} from './styles'
+import { CategoryList, Circle, Form } from './styles'
+import { CustomLink, Flex, PageDivisor, PageWrapper } from 'src/styles'
 
 const emptyState: ICategoryInput = {
     name: '',
@@ -106,9 +99,9 @@ const Category = () => {
                             {renderFields}
                             <Button type='submit'>Cadastrar</Button>
                         </Form>
-                        <Link to='/registrations/create/video'>
-                            Cadastrar vídeo
-                        </Link>
+                        <CustomLink to='/registrations/create/video'>
+                            {'> '} Cadastrar vídeo
+                        </CustomLink>
                     </PageDivisor>
                     <PageDivisor>
                         <h1>Categorias</h1>

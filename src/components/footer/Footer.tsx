@@ -1,4 +1,5 @@
 import React from 'react'
+import { DefaultLink } from 'src/styles'
 import { FooterBase } from './styles'
 
 const Footer = () => (
@@ -11,7 +12,9 @@ const Footer = () => (
         </a>
         <p>
             Orgulhosamente criado durante a{' '}
-            <a href='https://www.alura.com.br/'>Imersão React da Alura</a>
+            <DefaultLink href='https://www.alura.com.br/'>
+                <strong>Imersão React da Alura</strong>
+            </DefaultLink>
         </p>
         <p>Implementado por Wagner Esser</p>
     </FooterBase>

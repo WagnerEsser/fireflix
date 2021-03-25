@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import PageDefault from '../../components/PageDefault'
 import FormField from '../../components/form-field/FormField'
 import useForm from '../../hooks/useForm'
@@ -7,7 +7,8 @@ import Button from '../../components/Button'
 import VideoRepository from '../../repositories/Video'
 import CategoryRepository from '../../repositories/Category'
 import { IVideoInput, TCategory } from '../../interfaces'
-import { Form, PageWrapper } from './styles'
+import { Form } from './styles'
+import { CustomLink, PageWrapper } from 'src/styles'
 
 const INITITAL_STATE: IVideoInput = {
     title: '',
@@ -120,9 +121,9 @@ const Video = () => {
                     {renderFields}
                     <Button type='submit'>Cadastrar</Button>
                 </Form>
-                <Link to='/registrations/create/category'>
-                    Cadastrar categoria
-                </Link>
+                <CustomLink to='/registrations/create/category'>
+                    {'> '} Cadastrar categoria
+                </CustomLink>
             </PageWrapper>
         </PageDefault>
     )

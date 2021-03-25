@@ -3,7 +3,7 @@ import VideoCard from './VideoCard'
 import Slider from './Slider'
 import { Title, ExtraLink, SliderWrapper, SliderItem } from './styles'
 import { TCategory } from 'src/interfaces'
-import { Link } from 'react-router-dom'
+import { CustomLink } from 'src/styles'
 
 interface IProps {
     category: TCategory
@@ -35,9 +35,9 @@ const Carousel = (props: IProps) => {
             {category.videos.length === 0 && (
                 <>
                     <h3>Não há filmes cadastrados nesta categoria ainda.</h3>
-                    <Link to='/registrations/create/video'>
-                        Cadastrar vídeo
-                    </Link>
+                    <CustomLink to='/registrations/create/video'>
+                        {'> '} Cadastrar vídeo
+                    </CustomLink>
                 </>
             )}
             <Slider>
