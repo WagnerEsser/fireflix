@@ -53,7 +53,6 @@ const Video = () => {
 
     const handleChange = useCallback(
         (field: string) => (value?: string) => {
-            console.log(value)
             onChange(value)
             setErrors(errors => errors.filter(item => item !== field))
         },

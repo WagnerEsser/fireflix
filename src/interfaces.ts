@@ -5,7 +5,6 @@ export interface IExtraLink {
 
 export interface ICategoryInput {
     name: string
-    description: string
     color: string
     extra_link?: IExtraLink
 }

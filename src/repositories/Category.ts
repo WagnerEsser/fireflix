@@ -22,13 +22,19 @@ export const getAllItems = async (): Promise<TCategory[]> => {
 }
 
 export const create = async (categoryInput: ICategoryInput) => {
-    const response = await fetch(config.URL_BACKEND + '/categories', {
-        method: 'POST',
-        headers: { 'Content-type': 'applications/json' },
-        body: JSON.stringify(categoryInput)
-    })
-
-    return await response.json()
+    const responseFromServer = await fetch(
+        `${URL_CATEGORIES}?_embed=categories`,
+        {
+            method: 'POST',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify(categoryInput)
+        }
+    )
+    if (responseFromServer.ok) {
+        const response = await responseFromServer.json()
+        return response
+    }
+    throw new Error('Não foi possível cadastrar os dados :(')
 }
 
 export default { getCategories, getAllItems, create }
