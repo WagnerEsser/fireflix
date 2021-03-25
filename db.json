@@ -54,6 +54,11 @@
       "name": "DevOps",
       "color": "#690cb6",
       "id": 7
+    },
+    {
+      "name": "Banco de Dados",
+      "color": "#1e00ff",
+      "id": 8
     }
   ],
   "movies": [

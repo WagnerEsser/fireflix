@@ -5,28 +5,20 @@ import FormField from '../../components/form-field/FormField'
 import Button from '../../components/Button'
 import useForm from '../../hooks/useForm'
 import CategoryRepository from '../../repositories/Category'
-import styled from 'styled-components'
 import { ICategoryInput, TCategory } from '../../interfaces'
 import Loading from 'src/components/Loading'
+import {
+    CategoryList,
+    CategoryWrapper,
+    Circle,
+    Form,
+    PageDivisor
+} from './styles'
 
-const CategoryWrapper = styled.div`
-    padding: 50px;
-    display: flex;
-`
-const CreateCategory = styled.div`
-    flex: 1;
-`
-const CategoryList = styled.div`
-    flex: 1;
-`
 const emptyState: ICategoryInput = {
     name: '',
     color: '#FFFFFF'
 }
-
-const Form = styled.form`
-    margin-bottom: 20px;
-`
 
 const fields = [
     { label: 'Nome da categoria', name: 'name' },
@@ -104,7 +96,7 @@ const Category = () => {
     return (
         <PageDefault>
             <CategoryWrapper>
-                <CreateCategory>
+                <PageDivisor>
                     <h1>Nova categoria</h1>
                     <Form onSubmit={handleSubmit}>
                         {renderFields}
@@ -113,16 +105,19 @@ const Category = () => {
                     <Link to='/registrations/create/movie'>
                         Cadastrar vídeo
                     </Link>
-                </CreateCategory>
-                <CategoryList>
+                </PageDivisor>
+                <PageDivisor>
                     <h1>Categorias</h1>
                     {categories.length === 0 && <Loading width={300} />}
-                    <ul>
+                    <CategoryList>
                         {categories.map(category => (
-                            <li key={category.name}>{category.name}</li>
+                            <li key={category.name}>
+                                <Circle color={category.color} />
+                                {category.name}
+                            </li>
                         ))}
-                    </ul>
-                </CategoryList>
+                    </CategoryList>
+                </PageDivisor>
             </CategoryWrapper>
         </PageDefault>
     )
