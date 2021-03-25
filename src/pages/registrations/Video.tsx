@@ -62,7 +62,6 @@ const Video = () => {
             return
         }
 
-        console.log({ selected: values.category })
         const categorySelected = categories.find(
             category => category.name === values.categoryId
         )
