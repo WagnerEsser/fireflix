@@ -8,7 +8,7 @@ interface IProps {
     type?: string
     suggestions?: string[]
     error?: boolean
-    onChange(values: unknown): void
+    onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined
 }
 
 const FormField = (props: IProps) => {

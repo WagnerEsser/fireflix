@@ -3,6 +3,7 @@ import VideoCard from './VideoCard'
 import Slider from './Slider'
 import { Title, ExtraLink, SliderWrapper, SliderItem } from './styles'
 import { TCategory } from 'src/interfaces'
+import { Link } from 'react-router-dom'
 
 interface IProps {
     category: TCategory
@@ -11,38 +12,47 @@ interface IProps {
 
 const Carousel = (props: IProps) => {
     const { category, ignoreFirstVideo } = props
-    const categoryTitle = category.name
-    const categoryColor = category.color
-    const categoryExtraLink = category.extra_link
-    const movies = category.movies
+    const title = category.name
+    const color = category.color
+    const extraLinkUrl = category.extraLinkUrl
+    const extraLinkDescription = category.extraLinkDescription
+    const videos = category.videos
 
     return (
         <SliderWrapper>
-            {categoryTitle && (
+            {title && (
                 <>
-                    <Title style={{ backgroundColor: categoryColor || 'red' }}>
-                        {categoryTitle}
+                    <Title style={{ backgroundColor: color || 'red' }}>
+                        {title}
                     </Title>
-                    {categoryExtraLink && (
-                        <ExtraLink href={categoryExtraLink.url} target='_blank'>
-                            {categoryExtraLink.description}
+                    {extraLinkUrl && (
+                        <ExtraLink href={extraLinkUrl} target='_blank'>
+                            {extraLinkDescription}
                         </ExtraLink>
                     )}
                 </>
             )}
+            {category.videos.length === 0 && (
+                <>
+                    <h3>Não há filmes cadastrados nesta categoria ainda.</h3>
+                    <Link to='/registrations/create/video'>
+                        Cadastrar vídeo
+                    </Link>
+                </>
+            )}
             <Slider>
-                {movies &&
-                    movies.map((movie, index) => {
+                {videos &&
+                    videos.map((video, index) => {
                         if (ignoreFirstVideo && index === 0) {
                             return null
                         }
 
                         return (
-                            <SliderItem key={movie.title}>
+                            <SliderItem key={video.title}>
                                 <VideoCard
-                                    videoTitle={movie.title}
-                                    videoURL={movie.url}
-                                    categoryColor={categoryColor}
+                                    videoTitle={video.title}
+                                    videoURL={video.url}
+                                    categoryColor={color}
                                 />
                             </SliderItem>
                         )

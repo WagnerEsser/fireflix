@@ -4,19 +4,15 @@
       "id": 6,
       "name": "DevSoutinho",
       "color": "#ff6a00",
-      "extra_link": {
-        "description": "Canal no YouTube",
-        "url": "https://youtube.com/c/DevSoutinho"
-      }
+      "extraLinkDescription": "Canal no YouTube",
+      "extraLinkUrl": "https://youtube.com/c/DevSoutinho"
     },
     {
       "id": 5,
       "name": "Games",
       "color": "red",
-      "extra_link": {
-        "description": "Formação de Jogos na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
-      }
+      "extraLinkDescription": "Formação de Jogos na Alura",
+      "extraLinkUrl": "https://www.alura.com.br/cursos-online-front-end"
     },
     {
       "id": 4,
@@ -27,41 +23,32 @@
       "id": 1,
       "name": "Front End",
       "color": "#6BD1FF",
-      "extra_link": {
-        "description": "Formação de Front End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
-      }
+      "extraLinkDescription": "Formação de Front End na Alura",
+      "extraLinkUrl": "https://www.alura.com.br/cursos-online-front-end"
     },
     {
       "id": 2,
       "name": "Back End",
       "color": "#00C86F",
-      "extra_link": {
-        "description": "Cursos de Back End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-programacao"
-      }
+      "extraLinkDescription": "Cursos de Back End na Alura",
+      "extraLinkUrl": "https://www.alura.com.br/cursos-online-programacao"
     },
     {
       "id": 3,
       "name": "Data Science e Inteligência Artificial",
       "color": "#9cd33b",
-      "extra_link": {
-        "description": "Cursos de Data Science na Alura",
-        "url": "https://www.alura.com.br/cursos-online-mobile"
-      }
+      "extraLinkDescription": "Cursos de Data Science na Alura",
+      "extraLinkUrl": "https://www.alura.com.br/cursos-online-mobile"
     },
     {
-      "name": "DevOps",
-      "color": "#690cb6",
-      "id": 7
-    },
-    {
-      "name": "Banco de Dados",
+      "name": "Alura",
       "color": "#1e00ff",
-      "id": 8
+      "extraLinkDescription": "Alura Cursos Online",
+      "extraLinkUrl": "https://www.youtube.com/user/aluracursosonline",
+      "id": 7
     }
   ],
-  "movies": [
+  "videos": [
     {
       "id": 50,
       "categoryId": 6,
@@ -238,6 +225,18 @@
       "url": "https://www.youtube.com/watch?v=5t2gq3xJZ9o",
       "categoryId": 6,
       "id": 55
+    },
+    {
+      "title": "Conheça o canal da Alura!",
+      "url": "https://www.youtube.com/watch?v=k7IPr-rhrPE",
+      "categoryId": 7,
+      "id": 56
+    },
+    {
+      "title": "A MELHOR linguagem de programação com Fabio Akita",
+      "url": "https://www.youtube.com/watch?v=imB0QVoNrGc",
+      "categoryId": 7,
+      "id": 57
     }
   ]
 }

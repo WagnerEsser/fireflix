@@ -1,13 +1,13 @@
 import config from '../config'
-import { IMovieInput } from '../interfaces'
+import { IVideoInput } from '../interfaces'
 
-const URL_MOVIES = `${config.URL_BACKEND}/movies`
+const URL_MOVIES = `${config.URL_BACKEND}/videos`
 
-export const create = async (movieInput: IMovieInput) => {
-    const responseFromServer = await fetch(`${URL_MOVIES}?_embed=movies`, {
+export const create = async (videoInput: IVideoInput) => {
+    const responseFromServer = await fetch(`${URL_MOVIES}?_embed=videos`, {
         method: 'POST',
         headers: { 'Content-type': 'application/json' },
-        body: JSON.stringify(movieInput)
+        body: JSON.stringify(videoInput)
     })
     if (responseFromServer.ok) {
         const response = await responseFromServer.json()

@@ -13,7 +13,7 @@ export const getCategories = async (): Promise<TCategory[]> => {
 }
 
 export const getAllItems = async (): Promise<TCategory[]> => {
-    const response = await fetch(URL_CATEGORIES + '?_embed=movies')
+    const response = await fetch(URL_CATEGORIES + '?_embed=videos')
 
     if (response.ok) {
         return response.json()

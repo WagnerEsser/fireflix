@@ -9,10 +9,11 @@ import { ICategoryInput, TCategory } from '../../interfaces'
 import Loading from 'src/components/Loading'
 import {
     CategoryList,
-    CategoryWrapper,
+    PageWrapper,
     Circle,
     Form,
-    PageDivisor
+    PageDivisor,
+    Flex
 } from './styles'
 
 const emptyState: ICategoryInput = {
@@ -22,7 +23,9 @@ const emptyState: ICategoryInput = {
 
 const fields = [
     { label: 'Nome da categoria', name: 'name' },
-    { label: 'Cor', name: 'color', type: 'color' }
+    { label: 'Cor', name: 'color', type: 'color' },
+    { label: 'Link extra', name: 'extraLinkUrl' },
+    { label: 'Descrição', name: 'extraLinkDescription' }
 ]
 
 const validFields = (values: ICategoryInput) => {
@@ -70,7 +73,7 @@ const Category = () => {
     }
 
     const handleChange = useCallback(
-        (field: string) => (value?: string) => {
+        (field: string) => (value: React.FormEvent<HTMLInputElement>) => {
             onChange(value)
             setErrors(errors => errors.filter(item => item !== field))
         },
@@ -95,30 +98,32 @@ const Category = () => {
 
     return (
         <PageDefault>
-            <CategoryWrapper>
-                <PageDivisor>
-                    <h1>Nova categoria</h1>
-                    <Form onSubmit={handleSubmit}>
-                        {renderFields}
-                        <Button type='submit'>Cadastrar</Button>
-                    </Form>
-                    <Link to='/registrations/create/movie'>
-                        Cadastrar vídeo
-                    </Link>
-                </PageDivisor>
-                <PageDivisor>
-                    <h1>Categorias</h1>
-                    {categories.length === 0 && <Loading width={300} />}
-                    <CategoryList>
-                        {categories.map(category => (
-                            <li key={category.name}>
-                                <Circle color={category.color} />
-                                {category.name}
-                            </li>
-                        ))}
-                    </CategoryList>
-                </PageDivisor>
-            </CategoryWrapper>
+            <PageWrapper>
+                <Flex>
+                    <PageDivisor>
+                        <h1>Nova categoria</h1>
+                        <Form onSubmit={handleSubmit}>
+                            {renderFields}
+                            <Button type='submit'>Cadastrar</Button>
+                        </Form>
+                        <Link to='/registrations/create/video'>
+                            Cadastrar vídeo
+                        </Link>
+                    </PageDivisor>
+                    <PageDivisor>
+                        <h1>Categorias</h1>
+                        {categories.length === 0 && <Loading width={300} />}
+                        <CategoryList>
+                            {categories.map(category => (
+                                <li key={category.name}>
+                                    <Circle color={category.color} />
+                                    {category.name}
+                                </li>
+                            ))}
+                        </CategoryList>
+                    </PageDivisor>
+                </Flex>
+            </PageWrapper>
         </PageDefault>
     )
 }

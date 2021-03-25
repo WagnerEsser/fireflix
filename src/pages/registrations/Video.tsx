@@ -1,29 +1,21 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import PageDefault from '../../components/PageDefault'
-import styled from 'styled-components'
 import FormField from '../../components/form-field/FormField'
 import useForm from '../../hooks/useForm'
 import Button from '../../components/Button'
-import MovieRepository from '../../repositories/Movie'
+import VideoRepository from '../../repositories/Video'
 import CategoryRepository from '../../repositories/Category'
-import { IMovieInput, TCategory } from '../../interfaces'
+import { IVideoInput, TCategory } from '../../interfaces'
+import { Form, PageWrapper } from './styles'
 
-const VideoWrapper = styled.div`
-    padding: 50px;
-`
-
-const INITITAL_STATE: IMovieInput = {
+const INITITAL_STATE: IVideoInput = {
     title: '',
     url: '',
     categoryId: ''
 }
 
-const Form = styled.form`
-    margin-bottom: 20px;
-`
-
-const validFields = (values: IMovieInput) => {
+const validFields = (values: IVideoInput) => {
     const errors = []
     if (!values.url.length) {
         errors.push('url')
@@ -52,7 +44,7 @@ const Video = () => {
     }, [])
 
     const handleChange = useCallback(
-        (field: string) => (value?: string) => {
+        (field: string) => (value: React.FormEvent<HTMLInputElement>) => {
             onChange(value)
             setErrors(errors => errors.filter(item => item !== field))
         },
@@ -69,16 +61,17 @@ const Video = () => {
             return
         }
 
+        console.log({ selected: values.category })
         const categorySelected = categories.find(
-            category => category.name === values.category
+            category => category.name === values.categoryId
         )
 
-        const movieInput: IMovieInput = {
+        const videoInput: IVideoInput = {
             ...values,
             categoryId: categorySelected?.id || ''
         }
 
-        MovieRepository.create(movieInput)
+        VideoRepository.create(videoInput)
             .then(() => {
                 alert('Vídeo cadastrado com sucesso!')
                 history.push('/')
@@ -121,7 +114,7 @@ const Video = () => {
 
     return (
         <PageDefault>
-            <VideoWrapper>
+            <PageWrapper>
                 <h1>Cadastro de vídeo</h1>
                 <Form onSubmit={handleSubmit}>
                     {renderFields}
@@ -130,7 +123,7 @@ const Video = () => {
                 <Link to='/registrations/create/category'>
                     Cadastrar categoria
                 </Link>
-            </VideoWrapper>
+            </PageWrapper>
         </PageDefault>
     )
 }

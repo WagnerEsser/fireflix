@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './index.css'
 import Home from './pages/Home'
-import Video from './pages/registrations/Movie'
+import Video from './pages/registrations/Video'
 import Category from './pages/registrations/Category'
 import PageNotFound from './pages/PageNotFound'
 

@@ -3,25 +3,25 @@ import BannerMain from '../components/banner-main/BannerMain'
 import Carousel from '../components/carousel/Carousel'
 import CategoryRepository from '../repositories/Category'
 import PageDefault from '../components/PageDefault'
-import { TCategory, TMovie } from '../interfaces'
+import { TCategory, TVideo } from '../interfaces'
 import Loading from '../components/Loading'
 
-const renderFirstMovie = (movie: TMovie) => (
+const renderFirstVideo = (video: TVideo) => (
     <BannerMain
-        key={movie.title}
-        title={movie.title}
-        url={movie.url}
-        description={movie.description}
+        key={video.title}
+        title={video.title}
+        url={video.url}
+        description={video.description}
     />
 )
 
 const renderCategory = (category: TCategory, index: number) => {
-    const [firstMovie] = category.movies
+    const [firstVideo] = category.videos
     const firstCategory = index === 0
 
     return (
         <div key={category.id}>
-            {firstCategory && renderFirstMovie(firstMovie)}
+            {firstCategory && renderFirstVideo(firstVideo)}
             {<Carousel ignoreFirstVideo={firstCategory} category={category} />}
         </div>
     )

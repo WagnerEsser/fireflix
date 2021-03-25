@@ -2,7 +2,11 @@ import React from 'react'
 import SlickSlider from 'react-slick'
 import { Container } from './styles'
 
-const Slider = ({ children }: any) => (
+interface IProps {
+    children: React.ReactNode
+}
+
+const Slider = ({ children }: IProps) => (
     <Container>
         <SlickSlider
             {...{

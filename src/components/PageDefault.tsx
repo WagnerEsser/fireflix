@@ -10,7 +10,11 @@ export const Main = styled.div`
     padding: 50px 5% auto 5%5%;
 `
 
-const PageDefault = ({ children }: any) => (
+interface IProps {
+    children: React.ReactNode
+}
+
+const PageDefault = ({ children }: IProps) => (
     <>
         <Menu />
         <Main>{children}</Main>

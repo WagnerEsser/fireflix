@@ -1,26 +1,22 @@
-export interface IExtraLink {
-    description: string
-    url: string
-}
-
 export interface ICategoryInput {
     name: string
     color: string
-    extra_link?: IExtraLink
+    extraLinkDescription?: string
+    extraLinkUrl?: string
 }
 
 export type TCategory = ICategoryInput & {
     id: string
-    movies: TMovie[]
+    videos: TVideo[]
 }
 
-export interface IMovieInput {
+export interface IVideoInput {
     categoryId: string
     title: string
     url: string
     description?: string
 }
 
-export type TMovie = IMovieInput & {
+export type TVideo = IVideoInput & {
     id: string
 }

@@ -1,8 +1,11 @@
 import styled from 'styled-components'
 
-export const CategoryWrapper = styled.div`
-    padding: 50px;
+export const Flex = styled.div`
     display: flex;
+`
+
+export const PageWrapper = styled.div`
+    padding: 50px;
 `
 
 export const PageDivisor = styled.div`
