@@ -12,7 +12,7 @@ Clone o projeto e execute na pasta:
 
 ```
 npm install
-npm dev
+npm run dev
 ```
 
 ### Minhas Anotações do curso
