@@ -29,4 +29,4 @@ npm dev
 * concurrently -> Lib que permite rodar dois comandos que travam o terminal, em paralelo
     - Rodar com `concurrently "react-scripts start" "npm run server"`
 ---
-[http://alura.com.br/](@Alura)
+[@Alura](http://alura.com.br/)
