@@ -4,7 +4,7 @@
 
 # Fireflix
 
-Projeto contruído durante o curso [Imersão React](https://www.alura.com.br/imersao-react/) disponibilizado pela Alura, realizado com ReactJS e styled-components.
+Projeto construído durante o curso [Imersão React](https://www.alura.com.br/imersao-react/) disponibilizado pela Alura, realizado com ReactJS e styled-components.
 
 [Acesse o site online na Vercel.](https://fireflix.vercel.app/)
 
